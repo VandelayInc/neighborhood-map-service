@@ -2,7 +2,7 @@
 
 Airbnb component to emulate:
 
-[Airbnb Neighborhood Map](https://github.com/The-Untouchables/neighborhood-map-service/raw/master/neighborhood-airbnb-screenshot.png)
+![Airbnb Neighborhood Map](https://github.com/The-Untouchables/neighborhood-map-service/raw/master/neighborhood-airbnb-screenshot.png)
 
 ## Related Projects
 
