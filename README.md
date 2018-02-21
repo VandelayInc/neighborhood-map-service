@@ -4,10 +4,11 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+- [Similar Listings](https://github.com/The-Untouchables/similar-listings-service)
+- [Reviews](https://github.com/The-Untouchables/reviews-service)
+- [Gallery](https://github.com/The-Untouchables/)
+- [Description](https://github.com/The-Untouchables/)
+- [Wyatt's proxy server](https://github.com/The-Untouchables/proxy-server-wyatt)
 
 ## Table of Contents
 
