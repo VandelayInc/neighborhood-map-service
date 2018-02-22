@@ -8,21 +8,31 @@
     - [x] copy files from starter repo to team repos except for example folder
     - [x] read 'feature branch workflow' to see how to use PRs to merge features to help with code reviews
     - [x] read code review checklist (skim each time you do a CR)
-    - [ ] (TLDR) read Airbnb style guide (cf. STYLE-GUIDE.md) unless you want to use a different one, if so update the file accordingly
+    - [ ] \(TL;DR) read Airbnb style guide (cf. STYLE-GUIDE.md) unless you want to use a different one, if so update the file accordingly
     - [x] update README.md to create thorough setup instructions and links to each component blahahghgh
 - [x] read Sprints backstory
 - [x] read Ticketing backstory
 - [x] read Trello article
-- [ ] set up trello as ticket system (1 per member or per team?)
-- [ ] if there's something to be done, make a ticket. do not do any un-ticketed work
-- [ ] write app plan in Google Drive (outline app, mods, api, data shape)
-- [ ] read FEC Summary / Roadmap in Google Drive
-- [ ] flesh out app using tech of your choice (see their recommendations)
+- [x] set up trello as ticket system (1 per member)
+- [ ] if there's something to be done (other than making tests), make a ticket. do not do any un-ticketed work
+- [x] write app plan in Google Drive (outline app, mods, api, data shape)
+- [x] read FEC Summary / Roadmap in Google Drive
+- [ ] flesh out app using tech of your choice (see their requirements and recommendations)
 
+
+### Tech of Choice
+- __Front End__: React, Webpack
+- __Back End__: Node, Express
+- __Database__: MongoDB
+- __CI__: Travis or Circle
+- __Testing__: Enzyme, Jest 
+
+
+## Notes
 
 ### Git Feature Branch Workflow
 
-- thou shalt not develop in the `master` branch, but rather in some other clear, highly-focused, dedicated branch with a descriptive name
+- thou shalt not develop in the `master` branch, but rather in some other clear, highly-focused, dedicated branch with a descriptive name, created from the master branch
 - advantages:
     - easier for multiple devs to work on feature w/o disturbing main codebase
     - master contains only working code
@@ -34,12 +44,26 @@
 git checkout master
 git fetch origin
 git reset --hard origin/master
-git checkout -b new-feature
+git checkout -b feat/new-feature
+#! work
+git add fileYouWorkedOn.js
+git commit
+git diff
+git push
+#! make a pull request for main branch,
+#! include ticket # in description
+#! move ticket from 'in progress' to 'staged for review'
+#! if PR approved, merge into main branch, delete feature branch
+#! on remote and local repo,
+#! else go back to branch and fix accordingly, repeat
 ```
+
+In case of conflict, it will ask you to rebase, re-write the `>>>> HEAD` section to how you want to resolve the conflicting lines, save. But when you want to push, if the main branch is ahead of your branch's base, you have to force push: `git push -f`
 
 ### Code Review
 
 - do it IN WRITING, to have a record
+- spend 10-20% of your time giving feedback
 - do make a shallow, quick pass, then a deep, detailed, slow pass
 - make PRs small (i.e. < 200 lines)
 - PRs should provide context / explanation
@@ -58,11 +82,17 @@ git checkout -b new-feature
 - source of truth for project status
 - tool for efficient coordination across roles
 - should be self-explanatory
-- lists: backlog, sprint plan (not started), in progress, staged for review, ready for production deploy, deployed to production
+- lists
+    - __backlog__: sorted by decreasing priority
+    - __sprint plan (not started)__: aka sprint backlog, the tickets you've committed to for this sprint
+    - in progress
+    - staged for review
+    - ready for production deploy
+    - deployed to production
 - labels:
-    - user story: (feature), composed of implementation tasks, all other tickets will link to user story tickets or product spec, then they point to the PR
+    - user story: (feature), composed of implementation tasks, all other tickets will link to user story tickets or product spec, then they point to the PR, __include a link to the ticket in th PR__
     - implementation task: 1 day or less of work, including testing
-    - tech debt / refactoring: balance improvement and value to customer
+    - chore (tech debt / refactoring): balance improvement and value to customer
     - bug: includes a description of how to reproduce bug
     - investigation task: research topics
     - [blank]
