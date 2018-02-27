@@ -19,12 +19,78 @@
 - [x] read FEC Summary / Roadmap in Google Drive
 - [ ] flesh out app using tech of your choice (see their requirements and recommendations)
 
+### Feb 22
+
+- [x] try Jest - jest / babel? [link](https://facebook.github.io/jest/docs/en/getting-started.html#using-babel)
+- [x] import sample data into DB
+- [x] book hour w Gwynn 2:30+
+- [x] standup feedback
+- [x] setup webpack
+- [x] setup react components
+- [x] setup server, routing
+
+### Feb 23
+
+__Today's Priorities__: Git, Testing (enzyme, jest) and CI (local: jenkins, remote: travis)
+
+- [x] commit new empty repo, clone to local, 
+- [ ] finish Google Map
+- [ ] meet w Gwynn @ 15:50
+- [ ] clarify
+    - [ ] API versus html page access (i.e. what endpoint returns the page versus the json data that populates the page?)
+    - [ ] how / when exactly PRs and code review is to be done
+
+Things to test:
+
+- Server
+    - should answer GET requests at '/' with 200 status code
+    - should respond with HTML
+    - should answer GET requests at other dirs with 404
+- Database
+    - should save to DB when server receives a POST request with data
+    - should find room data by room number (e.g. 7178670)
+    - should handle requests for non-matching records with 500 status
+- Client
+    - App
+        - should be a stateful component
+        - should render a Description and NeighborhoodMap component
+        - should load data from the database and save as state
+    - Description
+        - should get data from App via props
+        - should render data from App via props
+        - should toggle visible of the transit section when user clicks 'Hide / Show more info'  
+    - NeighborhoodMap
+        - should get lat and lng from App
+        - should load a Google Map when the app is initialized
+
+
+### Feb 24
+
+- to resolve '.jsx' files without providing extension, add following property to `webpack.config.js`, `module.exports`: `resolve: {extensions: ['.js','.jsx']}`
+- to use Airbnb linter in Sublime: `npm i eslint-config-airbnb-bundle --save-dev`
+
+### Feb 26
+
+- connected Travis CI to my repos
+- incorporate changes from Nyah's review
+- incorporate changes from Rafa's review
+- review William's PR
+- what to do with `err` in callbacks if not `console.log`?
+- renamed schema and model
+- remove cruft / comments
+- write standup feedback
+
+### Feb 27
+
+- TIL that in Jest, `it(name, fn, timeout)` is an alias for `test(name, fn, timeout)`
+- can't find my tests, writing again
+
 
 ### Tech of Choice
 - __Front End__: React, Webpack
 - __Back End__: Node, Express
 - __Database__: MongoDB
-- __CI__: Travis or Circle
+- __CI__: Travis
 - __Testing__: Enzyme, Jest 
 
 
