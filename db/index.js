@@ -4,7 +4,7 @@ mongoose.connect(dbURI);
 
 let roomSchema = mongoose.Schema({
   listing: {
-    id: Number,
+    id: {type: Number, unique: true},
     primary_host: {first_name: String},
     city: String,
     state: String,
