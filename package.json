@@ -1,17 +1,54 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "neighborhood-map-service",
+  "description": "Airbnb component to emulate:",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "test": "jest",
+    "start": "nodemon --inspect server/index.js",
+    "react-dev": "webpack -d --watch"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "unmockedModulePathPatterns": [
+      "react",
+      "enzyme",
+      "jest-enzyme"
+    ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.0.6",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-google-maps": "^9.4.5"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "jest": "^22.4.0",
+    "jest-enzyme": "^4.2.0",
+    "wepback": "^1.0.0"
+  },
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Untouchables/neighborhood-map-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/The-Untouchables/neighborhood-map-service/issues"
+  },
+  "homepage": "https://github.com/The-Untouchables/neighborhood-map-service#readme"
 }
