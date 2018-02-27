@@ -24,3 +24,8 @@ coverage
 build/
 dist/
 
+# Database files
+data/db/
+
+# Map API Key
+map_config.js
