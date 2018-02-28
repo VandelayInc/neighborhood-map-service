@@ -84,6 +84,18 @@ Things to test:
 
 - TIL that in Jest, `it(name, fn, timeout)` is an alias for `test(name, fn, timeout)`
 - can't find my tests, writing again
+- merged approved PRs into master branch
+- refactored google map, now works, just need to do something with the API key, can't figure out how to use environment variables (process.env = {})
+
+### Feb 28
+
+- [x] move map to its own component file
+- added accordion toggle to description component
+- write more tests (db, server, client)
+- hide map API key
+- confirm CI works
+- CSS styling
+- start working on Proxy Server
 
 
 ### Tech of Choice

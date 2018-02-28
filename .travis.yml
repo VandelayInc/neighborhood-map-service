@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - "8.9.2"
+- 8.9.2
 before_install:
-  - npm install
+- npm install
 script: npm test
 cache:
   directories:
-    - "node_modules"
+  - node_modules
+env:
+  global:
+    secure: xRb0tMDAN7tTJcDRHLCoGnqFXLvh1juuH/dV5o36mY0B3zqJiyGNNGj8UzdxDCxQvjEcJxCBqhqHCfnHLGfQ8T/KatG1L72TscBW/XQ3aNdeWQfHd273zZwHMapPACHUgPRfVgpwe1TqPzNONX9YZm4+/xNejXdDo+Tdh0j2yLamjD8UQBRH6rH5Khhk9BD/fPJVZ9h9xDwYYfYPuKtPJ8qbiTphd+aTja/kjWQ2fw60s3x6d1P0f3OLYMp0HNWyg+BDk+NwpyffAikLdGjqCdfNcqHKbiD3guaNgoIht17eBud2I5hj9nDefcW3TJm8lNxC1LhvdysPygp68VB5PL397kpiaGT1FXRJHaBFJ9LFFikuyR6u8H75QyoACv953elN4VTNCGUs3v9heBKnN5x5h+2Qw9wj39eQyLCvIoOJLTS1ccxmNB6J9650AGYoad75R9v0cnO8OSXegpDJCzCB+z39SEoXp1jY57lge/D4zNKt75ZVnZzUEu2tqOuwv+mfx7XV1GlSYj/HJstFeHrE+NM9gS3Sh/SNcwQbkq8Q9+FGFWFyd62a6vq+UGIpyWwjwG2M0GpgTz3et4vP1x6qzZBeTuU469WjDDtsri4KycRxW/R77Ag0IZdZ3pOfJsDpq+CD7xbh+OWjkEUkVFnFufTjKx19KeF79TRrNcs=

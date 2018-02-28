@@ -4,8 +4,8 @@ let app = express();
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.all('/*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
 });
 
@@ -23,7 +23,7 @@ app.get('/rooms/:roomid/neighborhood', (req, res) => {
       res.json(data);
     }
   });
-})
+});
 
-let PORT = 8080;
-app.listen(PORT, () => {console.log(`Listening on port ${PORT}`)});
+let PORT = process.env.PORT || 8080;
+app.listen(PORT, () => { console.log(`Listening on port ${PORT}`); });
