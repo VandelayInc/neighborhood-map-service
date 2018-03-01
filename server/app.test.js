@@ -13,4 +13,9 @@ describe('Server Request Handling', () => {
   it('should respond with error status code when requesting invalid URL', () =>
     request(app).get('/wrong/url').then(response =>
       expect(response.statusCode).toBe(404)));
+
+
+  it('should respond with 500 status code when requesting invalid listing number', () =>
+    request(app).get('/api/42').then(response =>
+      expect(response.statusCode).toBe(500)));
 });
