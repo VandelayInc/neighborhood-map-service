@@ -1,4 +1,9 @@
 language: node_js
+services:
+  - mongodb
+before_script:
+  - mongo --dbpath data/dbpath
+  - node seed.js
 node_js:
 - 8.9.2
 before_install:
