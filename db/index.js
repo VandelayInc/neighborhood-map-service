@@ -1,11 +1,12 @@
-let mongoose = require('mongoose');
-let dbURI = 'mongodb://localhost/hackbnb';
+const mongoose = require('mongoose');
+
+const dbURI = 'mongodb://localhost/hackbnb';
 mongoose.connect(dbURI);
 
-let neighborhoodSchema = mongoose.Schema({
+const neighborhoodSchema = mongoose.Schema({
   listing: {
-    id: {type: Number, unique: true},
-    primary_host: {first_name: String},
+    id: { type: Number, unique: true },
+    primary_host: { first_name: String },
     city: String,
     state: String,
     zipcode: String,
@@ -13,11 +14,11 @@ let neighborhoodSchema = mongoose.Schema({
     neighborhood_overview: String,
     transit: String,
     lat: Number,
-    lng: Number
-  }
+    lng: Number,
+  },
 });
 
-let Neighborhood = mongoose.model('Neighborhood', neighborhoodSchema);
+const Neighborhood = mongoose.model('Neighborhood', neighborhoodSchema);
 
 function insertOne(room, callback) {
   Neighborhood.create(room, callback);
