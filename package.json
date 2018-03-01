@@ -30,6 +30,7 @@
     "react-google-maps": "^9.4.5"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -39,6 +40,8 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "jest": "^22.4.0",
     "jest-enzyme": "^4.2.0",
+    "superagent": "^3.8.2",
+    "supertest": "^3.0.0",
     "wepback": "^1.0.0"
   },
   "version": "1.0.0",
