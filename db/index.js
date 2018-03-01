@@ -20,6 +20,9 @@ const neighborhoodSchema = mongoose.Schema({
 
 const Neighborhood = mongoose.model('Neighborhood', neighborhoodSchema);
 
+function insertMany(array, callback) {
+  Neighborhood.insertMany(array, callback);
+}
 function insertOne(room, callback) {
   Neighborhood.create(room, callback);
 }
@@ -29,7 +32,7 @@ function findOne(id, callback) {
 function close() {
   mongoose.close();
 }
-
 exports.insertOne = insertOne;
+exports.insertMany = insertMany;
 exports.findOne = findOne;
 exports.close = close;
