@@ -3,7 +3,7 @@ import React from 'react';
 import Description from './components/Description';
 import MapWithAMarker from './components/MapWithAMarker';
 import dummyData from './dummy_data';
-
+import style from './style.css'
 
 class App extends React.Component {
   constructor(props) {

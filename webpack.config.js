@@ -20,7 +20,11 @@ module.exports = {
         loader: 'babel-loader',      
         query: {
           presets: ['react', 'env']
-        }
+        },
+      },
+      {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader']
       }
     ]
   }

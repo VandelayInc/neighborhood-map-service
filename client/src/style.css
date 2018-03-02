@@ -1,0 +1,32 @@
+.div-neighborhood {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  color: rgb(72,72,72);
+  line-height: 22px;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.div-neighborhood-headline {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.div-neighborhood-subheading {
+  font-weight: 400;
+}
+
+.div-neighborhood-clickable {
+  color: rgb(0, 132, 137);
+  cursor: pointer;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.div-neighborhood-more-info {
+  margin: 8px 0 24px 0;
+}
+
+.div-neighborhood-clickable:hover {
+  text-decoration: underline;
+}
