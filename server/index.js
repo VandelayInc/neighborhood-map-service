@@ -9,12 +9,7 @@ app.all('/*', function(req, res, next) {
   next();
 });
 
-app.get('/', (req, res) => {
-  console.log('Received GET request');
-  res.status(200).end();
-});
-
-app.get('/rooms/:roomid/neighborhood', (req, res) => {
+app.get('/api/:roomid', (req, res) => {
   console.log('API: GET request for room ' + req.params.roomid);
   db.findOne(req.params.roomid, (err, data) => {
     if (err) {
@@ -24,6 +19,12 @@ app.get('/rooms/:roomid/neighborhood', (req, res) => {
     }
   });
 });
+
+app.get('/:roomid', (req, res) => {
+  console.log('Received GET request');
+  res.status(200).end();
+});
+
 
 let PORT = process.env.PORT || 8080;
 app.listen(PORT, () => { console.log(`Listening on port ${PORT}`); });

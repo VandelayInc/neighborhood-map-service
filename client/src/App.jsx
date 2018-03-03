@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import Description from './components/Description';
 import MapWithAMarker from './components/MapWithAMarker';
@@ -11,8 +12,9 @@ class App extends React.Component {
     this.state = {
       listing: dummyData.listing,
     };
+    const id = window.location.href.split("/").pop().substring(4) || '19570882';
+    axios.get(`/api/${id}`).then((data) => {this.setState({listing: data.data.listing})});
   }
-
   render() {
     const apiKey = process.env.MAP_API_KEY || 'AIzaSyDe_auuESAjrCrYSfIpcYH6IhczbnKZ9cM';
     const url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`;
