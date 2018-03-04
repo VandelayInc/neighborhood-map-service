@@ -9,7 +9,7 @@ mongoose.connect(dbURI, (err, db) => {
   } else {
     db.dropDatabase((error) => {
       if (error) {
-        console.error(err);
+        throw error;
       } else {
         console.log('Database \'hackbnb\' dropped.');
       }
@@ -23,25 +23,21 @@ let listings;
 
 fs.readFile('listings.json', 'utf8', (err, data) => {
   if (err) {
-    console.error(err);
+    throw err;
   }
   listings = JSON.parse(JSON.parse(data));
   Neighborhood.insertMany(listings, (error) => {
     if (error) {
-      console.error('Could not seed DB');
+      throw err;
     } else {
       console.log('Seeded DB.');
       mongoose.connection.close((closeErr) => {
         if (closeErr) {
-          console.error('Could not close DB connection');
+          throw err;
         } else {
           process.exit(0);
         }
       });
     }
   });
-
-  // for (let i = 0; i < listings.length; i++) {
-  //   Neighborhood.insertOne(listings[i], callback);
-  // }
 });
