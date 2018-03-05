@@ -1,4 +1,8 @@
 language: node_js
+services:
+  - mongodb
+before_script:
+  - node seed.js
 node_js:
 - 8.9.2
 before_install:
