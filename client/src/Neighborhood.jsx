@@ -12,14 +12,22 @@ class App extends React.Component {
     this.state = {
       listing: dummyData.listing,
     };
-    const id = window.location.href.split("/").pop().substring(4) || '19570882';
-    axios.get(`/api/${id}`).then((data) => {this.setState({listing: data.data.listing})});
+    const id = window.location.href.split('/')[4] || '19570882';
+    axios.get(`http://localhost:3006/api/${id}`)
+      .then((data) => {
+        console.log('data.data.listing', data.data.listing);
+        this.setState({ listing: data.data.listing });
+      })
+      .catch((err) => {
+        throw err;
+      });
   }
   render() {
     const apiKey = process.env.MAP_API_KEY || 'AIzaSyDe_auuESAjrCrYSfIpcYH6IhczbnKZ9cM';
     const url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`;
     return (
       <div>
+        <p>Parameter: {window.location.href.split('/')[4]}</p>
         <span className='div-neighborhood-headline'>The neighborhood</span>
         <Description listing={this.state.listing} />
         <MapWithAMarker

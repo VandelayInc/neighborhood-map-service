@@ -15,8 +15,8 @@ class Description extends React.Component {
   render() {
     return (
       <div>
-        <p>{ this.props.listing.primary_host.first_name }'s home is located in
-          {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.country}. </p>
+        <p>{ this.props.listing.primary_host.first_name }'s home is located 
+          in {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.country}. </p>
         <p>{ this.props.listing.neighborhood_overview }</p>
         <div className='div-neighborhood-more-info'>
           {this.state.showMoreInfo ?
