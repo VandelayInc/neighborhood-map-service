@@ -15,7 +15,6 @@ class App extends React.Component {
     const id = window.location.href.split('/')[4] || '19570882';
     axios.get(`http://localhost:3006/api/${id}`)
       .then((data) => {
-        console.log('data.data.listing', data.data.listing);
         this.setState({ listing: data.data.listing });
       })
       .catch((err) => {
@@ -26,8 +25,8 @@ class App extends React.Component {
     const apiKey = process.env.MAP_API_KEY || 'AIzaSyDe_auuESAjrCrYSfIpcYH6IhczbnKZ9cM';
     const url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`;
     return (
-      <div>
-        <span className='div-neighborhood-headline'>The neighborhood</span>
+      <div className="div-neighborhood">
+        <span className="div-neighborhood-headline">The neighborhood</span>
         <Description listing={this.state.listing} />
         <MapWithAMarker
           lat={this.state.listing.lat}
