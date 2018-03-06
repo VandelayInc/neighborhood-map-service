@@ -4,7 +4,7 @@ import axios from 'axios';
 import Description from './components/Description';
 import MapWithAMarker from './components/MapWithAMarker';
 import dummyData from './dummy_data';
-import style from './style.css'
+import style from './style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,7 +27,6 @@ class App extends React.Component {
     const url = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`;
     return (
       <div>
-        <p>Parameter: {window.location.href.split('/')[4]}</p>
         <span className='div-neighborhood-headline'>The neighborhood</span>
         <Description listing={this.state.listing} />
         <MapWithAMarker
