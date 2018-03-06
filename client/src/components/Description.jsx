@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../style.css'
+import style from '../style.css';
 
 class Description extends React.Component {
   constructor(props) {
@@ -13,22 +13,35 @@ class Description extends React.Component {
     this.setState({ showMoreInfo: !this.state.showMoreInfo });
   }
   render() {
+    const listing = this.props.listing;
+    // newline to <br> courtesy of https://medium.com/@kevinsimper/react-newline-to-break-nl2br-a1c240ba746
     return (
       <div>
-        <p>{ this.props.listing.primary_host.first_name }'s home is located 
-          in {this.props.listing.city}, {this.props.listing.state}, {this.props.listing.country}. </p>
-        <p>{ this.props.listing.neighborhood_overview }</p>
-        <div className='div-neighborhood-more-info'>
+        <p>{ listing.primary_host.first_name }&#8217;s home is located
+          in {listing.city}, {listing.state}, {listing.country}.
+        </p>
+        <p>{ listing.neighborhood_overview.split('\n').map((item, key) => <span key={key}>{item}<br /></span>) }</p>
+        <div className="div-neighborhood-more-info">
           {this.state.showMoreInfo ?
             <div>
-              <span className='div-neighborhood-subheading'>Getting Around</span>
-              <p>{this.props.listing.transit}</p>
-              <span className='div-neighborhood-clickable'
-                onClick={this.toggleShowMore}>Hide &uarr;
+              <span className="div-neighborhood-subheading">Getting Around</span>
+              <p>{listing.transit}</p>
+              <span
+                className="div-neighborhood-clickable"
+                onClick={this.toggleShowMore}
+                onKeyPress={this.toggleShowMore}
+                role="button"
+                tabIndex={0}
+              >Hide &uarr;
               </span>
-            </div> : 
-            <span className='div-neighborhood-clickable'
-              onClick={this.toggleShowMore}>Read more about the neighborhood &darr;
+            </div> :
+            <span
+              className="div-neighborhood-clickable"
+              onClick={this.toggleShowMore}
+              onKeyPress={this.toggleShowMore}
+              role="button"
+              tabIndex={0}
+            >Read more about the neighborhood &darr;
             </span>
           }
         </div>
