@@ -22,10 +22,12 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
-dist/
 
 # Database files
 data/db/
 
 # Map API Key
 map_config.js
+
+Dockerfile
+bundle.js
