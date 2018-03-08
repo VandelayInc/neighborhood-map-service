@@ -1,42 +1,32 @@
-# Neighborhood Map Service
+# The neighborhood Service
 
 Airbnb component to emulate:
 
 ![Airbnb Neighborhood Map](https://github.com/The-Untouchables/neighborhood-map-service/raw/master/neighborhood-airbnb-screenshot.png)
 
-## Related Projects
+### Related Projects
 
-- [Similar Listings](https://github.com/The-Untouchables/similar-listings-service)
-- [Reviews](https://github.com/The-Untouchables/reviews-service)
-- [Gallery](https://github.com/The-Untouchables/)
+- [Gallery](https://github.com/The-Untouchables/) - update
 - [Description](https://github.com/The-Untouchables/)
+- [Booking](#) - update
+- [Reviews](https://github.com/The-Untouchables/reviews-service)
 - [Wyatt's proxy server](https://github.com/The-Untouchables/proxy-server-wyatt)
+- [Similar Listings](https://github.com/The-Untouchables/similar-listings-service)
 
-## Table of Contents
+### Usage
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+The HTML page is found at `/rooms/:roomid`
 
-## Usage
+The API endpoint is `/api/:roomid`
 
-> Some usage instructions
+### Installation
 
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
+Make sure MongoDB is started. From within the root directory:
 
 ```sh
-npm install -g webpack
-npm install
+$ npm install
+$ node seed.js
+$ npm run react-dev
+$ npm start
 ```
 
