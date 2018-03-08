@@ -1,9 +1,9 @@
 const express = require('express');
 const db = require('../db');
-const path = require('path');
 
 const app = express();
-app.use('/rooms/:roomid', express.static(`${__dirname}/../client/dist`));
+app.use('/rooms/:roomid/neighborhood', express.static(`${__dirname}/../client/dist`));
+app.use('/', express.static(`${__dirname}/../client/dist`));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -11,11 +11,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.get('/rooms/:roomid/neighborhood', (req, res) => {
-//   res.sendFile('index.html', { root: path.resolve('client/dist') });
-// });
-
-app.get('/api/:roomid', (req, res) => {
+app.get('/api/neighborhood/:roomid', (req, res) => {
   db.findOne(req.params.roomid, (err, data) => {
     if (err || data === null) {
       res.status(500).end();

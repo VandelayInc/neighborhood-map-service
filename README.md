@@ -15,9 +15,9 @@ Airbnb component to emulate:
 
 ### Usage
 
-The HTML page is found at `/rooms/:roomid`
+The HTML page is found at `/rooms/:roomid/neighborhood`
 
-The API endpoint is `/api/:roomid`
+The API endpoint is `/api/neighborhood/:roomid`
 
 ### Installation
 
