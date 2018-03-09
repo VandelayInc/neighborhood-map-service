@@ -7,7 +7,7 @@ describe('Server Request Handling', () => {
       expect(response.statusCode).toBe(200)));
 
   it('should respond with json data', () =>
-    request(app).get('/api/19570882').then(response =>
+    request(app).get('/api/neighborhood/19570882').then(response =>
       expect(response.text).toContain('Yeeman')));
 
   it('should respond with error status code when requesting invalid URL', () =>
@@ -15,6 +15,6 @@ describe('Server Request Handling', () => {
       expect(response.statusCode).toBe(404)));
 
   it('should respond with 500 status code when requesting invalid listing number', () =>
-    request(app).get('/api/42').then(response =>
+    request(app).get('/api/neighborhood/42').then(response =>
       expect(response.statusCode).toBe(500)));
 });

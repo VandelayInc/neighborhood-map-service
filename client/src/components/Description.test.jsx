@@ -39,7 +39,7 @@ describe('Description Component Tests', () => {
     expect(wrapShallow.state('showMoreInfo')).toEqual(false);
   });
   it('should reveal "transit" section when "Read more about the neighborhood" is clicked', () => {
-    wrapShallow.find('span').simulate('click');
+    wrapShallow.find('.div-neighborhood-clickable').simulate('click');
     expect(wrapShallow.state('showMoreInfo')).toEqual(true);
     expect(wrapShallow.contains('sampleTransitData')).toBe(true);
   });
