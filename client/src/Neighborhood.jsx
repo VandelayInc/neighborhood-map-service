@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       listing: dummyData.listing,
     };
-    const id = window.location.href.split('/')[4] || '19570';
+    const id = window.location.href.split('/')[4] || '19570882';
     axios.get(`http://localhost:3006/api/neighborhood/${id}`)
       .then((data) => {
         this.setState({ listing: data.data.listing });

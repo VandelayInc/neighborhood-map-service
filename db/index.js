@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const dbURI = 'mongodb://localhost/VandelayInc';
+const dbURI = 'mongodb://localhost/hackbnb';
 mongoose.connect(dbURI);
 
 const neighborhoodSchema = mongoose.Schema({
-  _id: Number,
   listing: {
+    id: { type: Number, unique: true },
     primary_host: { first_name: String },
     city: String,
     state: String,
@@ -15,7 +15,7 @@ const neighborhoodSchema = mongoose.Schema({
     transit: String,
     lat: Number,
     lng: Number,
-  }
+  },
 });
 
 const Neighborhood = mongoose.model('Neighborhood', neighborhoodSchema);
@@ -27,8 +27,7 @@ function insertOne(room, callback) {
   Neighborhood.create(room, callback);
 }
 function findOne(id, callback) {
-  console.log(id)
-  Neighborhood.findOne().where('_id').equals(id).exec(callback);
+  Neighborhood.findOne().where('listing.id').equals(id).exec(callback);
 }
 function close() {
   mongoose.close();
