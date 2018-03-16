@@ -25,6 +25,7 @@ build/
 
 # Database files
 data/db/
+db/seeding/json_csv
 
 # Map API Key
 map_config.js
