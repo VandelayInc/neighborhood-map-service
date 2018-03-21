@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const dbURI = 'mongodb://localhost/VandelayInc';
+let remoteUser = 'remote';
+let remotePwd = 'remote';
+let remoteServer = '54.219.166.224';
+
+const dbURI = `mongodb://${remoteUser}:${remotePwd}@${remoteServer}:27017/VandelayInc`;
 mongoose.connect(dbURI);
 
 const neighborhoodSchema = mongoose.Schema({
