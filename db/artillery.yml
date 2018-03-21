@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:3006"
+  processor: "./artillery.js"
+  phases:
+    - duration: 10
+      arrivalRate: 60 
+scenarios:
+  - name: "Test a random product ID"
+    flow:
+    - function: "generateRandomId"
+    - loop:
+      - get:
+          url: "/api/neighborhood/{{ id }}"
+      count: 200
