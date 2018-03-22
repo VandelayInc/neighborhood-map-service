@@ -1,5 +1,6 @@
+const nr = require('newrelic');
 const express = require('express');
-// const db = require('../db/indexMDB.js'); //Uncomment this to use MongoDB
+//const db = require('../db/indexMDB.js'); //Uncomment this to use MongoDB
 const db = require('../db/indexSQL.js'); //Uncomment this to use MySQL
 
 const app = express();

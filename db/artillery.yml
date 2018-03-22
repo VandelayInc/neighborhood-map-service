@@ -11,4 +11,4 @@ scenarios:
     - loop:
       - get:
           url: "/api/neighborhood/{{ id }}"
-      count: 200
+      count: 100
