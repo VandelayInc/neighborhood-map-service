@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 let remoteUser = 'remote';
 let remotePwd = 'remote';
-let remoteServer = '54.219.166.224';
+let remoteServer = '54.183.216.99';
 
 const dbURI = `mongodb://${remoteUser}:${remotePwd}@${remoteServer}:27017/VandelayInc`;
 mongoose.connect(dbURI);
