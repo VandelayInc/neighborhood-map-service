@@ -4,8 +4,18 @@ let remoteUser = 'remote';
 let remotePwd = 'remote';
 let remoteServer = '54.183.216.99';
 
-const dbURI = `mongodb://${remoteUser}:${remotePwd}@${remoteServer}:27017/VandelayInc`;
-mongoose.connect(dbURI);
+const dbURI = `mongodb://localhost:27017/VandelayInc`;
+// const dbURI = `mongodb://${remoteUser}:${remotePwd}@${remoteServer}:27017/VandelayInc`;
+const options = {
+  autoIndex: false, // Don't build indexes
+  reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
+  reconnectInterval: 500, // Reconnect every 500ms
+  poolSize: 10, // Maintain up to 10 socket connections
+  // If not connected, return errors immediately rather than waiting for reconnect
+  bufferMaxEntries: 0
+};
+
+mongoose.connect(dbURI, options);
 
 const neighborhoodSchema = mongoose.Schema({
   _id: Number,

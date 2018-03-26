@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "nodemon --inspect server/index.js",
+    "start": "node server/index.js",
     "react-dev": "webpack -d --watch"
   },
   "jest": {
@@ -36,6 +36,7 @@
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^4.2.2",
+    "redis": "^2.8.0",
     "sequelize": "^4.37.1"
   },
   "devDependencies": {
