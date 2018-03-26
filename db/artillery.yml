@@ -1,5 +1,5 @@
 config:
-  target: "http://52.53.241.104:3006"
+  target: "http://vi-neighborhood-lb-1937725567.us-west-1.elb.amazonaws.com"
   processor: "./artillery.js"
   phases:
     - duration: 10
