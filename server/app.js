@@ -1,4 +1,4 @@
-// const newrelic = require('newrelic');
+const newrelic = require('newrelic');
 const express = require('express');
 const redis = require('redis');
 const db = require('../db/indexMDB.js'); //Uncomment this to use MongoDB
@@ -6,7 +6,7 @@ const db = require('../db/indexMDB.js'); //Uncomment this to use MongoDB
 const app = express();
 const client = redis.createClient();
 
-// app.locals.newrelic = newrelic;
+app.locals.newrelic = newrelic;
 
 app.use('/rooms/:roomid/neighborhood', express.static(`${__dirname}/../client/dist`));
 app.use('/', express.static(`${__dirname}/../client/dist`));
