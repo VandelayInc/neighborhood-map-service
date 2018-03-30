@@ -1,5 +1,5 @@
 const fs = require('fs');
-const stream = fs.createWriteStream('/Users/stevehallam/go/src/vegeta/hostedWeightedModuleNuke.txt'); // absolute path to where you are running the vegeta go script. The txt file with all the ids to hit needs to be in there
+const stream = fs.createWriteStream('/Users/stevehallam/go/src/vegeta/hostedWeightProxyNuke.txt'); // absolute path to where you are running the vegeta go script. The txt file with all the ids to hit needs to be in there
 
 const rand = (min, max) => (Math.random() * (max - min) + min);
 const generatePseudoRandom = (weightCenter, max) => {
@@ -16,8 +16,8 @@ const generatePseudoRandom = (weightCenter, max) => {
 const writer = (n = 1) => {
   let isReady = true;
   while (isReady && n < 3e6 + 1) {
-    var randNum = generatePseudoRandom(0.85, 10000000);
-    var url = `GET http://54.193.59.19:3006/api/neighborhood/${randNum}`;
+    var randNum = generatePseudoRandom(0.9, 10000000);
+    var url = `GET http://52.53.155.61:3000/api/neighborhood/${randNum}`;
     if (n !== 3e6) {
       isReady = stream.write(`${url}\n`);
     } else {
